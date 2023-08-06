@@ -11,5 +11,5 @@ extension UIImage {
     static let home = UIImage(systemName: "house")
     static let homeFilled = UIImage(systemName: "house.fill")
     static let search = UIImage(systemName: "magnifyingglass")
-    static let library = UIImage(named: "Library")
+    static let library = UIImage(named: "library")
 }
