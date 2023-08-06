@@ -8,20 +8,25 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    var viewModel: TabBarViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        self.viewModel = TabBarViewModel()
+        setupBarUI()
+        setupTabs()
+    }
+
+    private func setupBarUI() {
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .gray
         self.tabBar.backgroundColor = .black
-        self.navigationItem.hidesBackButton = true
-        setupTabs()
     }
 
     private func setupTabs() {
         // Tab one
-        let homeTab = UIViewController.homeViewController()
-        homeTab.navigationBar.tintColor = .white
-        homeTab.title = "Browse"
+        let homeTab = UIViewController.homeViewController(viewModel: viewModel.getHomeViewModel())
         homeTab.tabBarItem = UITabBarItem(title: Strings.home, image: UIImage.home, tag: 0)
 
         // Tab two

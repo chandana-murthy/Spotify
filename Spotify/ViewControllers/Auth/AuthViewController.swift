@@ -34,9 +34,7 @@ class AuthViewController: UIViewController {
     private func setupNavView() {
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.backgroundColor = .black
-        navigationController?.navigationBar.tintColor = .white
-        let colorKey = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = colorKey
+        navigationController?.navigationBar.titleTextAttributes = Constants.titleColorKey
         self.title = Strings.login
     }
 }

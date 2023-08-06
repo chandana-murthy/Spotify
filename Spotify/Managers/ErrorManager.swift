@@ -10,6 +10,7 @@ import Foundation
 enum SError: Error {
     case unknownError
     case invalidAPIToken
+    case failedToGetData
 
     var rawValue: String? {
         switch self {
@@ -17,6 +18,8 @@ enum SError: Error {
             return Strings.invalidAPIToken
         case .unknownError:
             return Strings.thereWasError
+        case .failedToGetData:
+            return "Failed to get data"
         }
     }
 }

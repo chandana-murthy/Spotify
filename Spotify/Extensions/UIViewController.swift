@@ -27,29 +27,32 @@ extension UIViewController {
 
 // MARK: - Controllers
 extension UIViewController {
-    static func homeViewController() -> UINavigationController {
+    static func homeViewController(viewModel: HomeViewModel) -> UINavigationController {
         let storyboard = UIStoryboard.homeStoryboard
         guard let vc = storyboard.instantiateInitialViewController() as? HomeViewController else {
             print("Storyboard \(#function) not configured. Check for initialViewcontroller")
             fatalError("This should not be null")
         }
+        vc.viewModel = viewModel
         let navController = UINavigationController(rootViewController: vc)
         return navController
     }
 
-    static func profileViewController() -> ProfileViewController {
+    static func profileViewController(viewModel: ProfileViewModel) -> ProfileViewController {
         let storyboard = UIStoryboard.profileStoryboard
         guard let vc = storyboard.instantiateInitialViewController() as? ProfileViewController else {
             fatalError("Something went wrong here: \(#function)")
         }
+        vc.viewModel = viewModel
         return vc
     }
 
-    static func settingsController() -> SettingsViewController {
+    static func settingsController(viewModel: SettingsViewModel) -> SettingsViewController {
         let storyboard = UIStoryboard.settingsStoryboard
         guard let vc = storyboard.instantiateInitialViewController() as? SettingsViewController else {
             fatalError("Something went wrong here: \(#function)")
         }
+        vc.viewModel = viewModel
         return vc
     }
 
