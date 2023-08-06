@@ -17,6 +17,14 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        authorizeUser()
+    }
+
+    private func authorizeUser() {
+        if AuthManager.shared.isSignedIn {
+            let vc = TabBarViewController()
+            navigationController?.pushViewController(vc, animated: false)
+        }
     }
 
     private func setupButtons() {
@@ -35,6 +43,6 @@ class WelcomeViewController: UIViewController {
 extension WelcomeViewController {
     @IBAction func didTapNext() {
         let viewController = TabBarViewController()
-        navigationController?.pushViewController(viewController, animated: false)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
