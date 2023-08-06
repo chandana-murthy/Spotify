@@ -13,4 +13,6 @@ extension UIColor {
     }
 
     static let appColor = getColor(red: 30, green: 215, blue: 96)
+    static let gradientTopColor = getColor(red: 0, green: 102, blue: 123)
+    static let gradientBottomColor = getColor(red: 0, green: 55, blue: 57)
 }

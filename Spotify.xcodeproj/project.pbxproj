@@ -55,6 +55,8 @@
 		14D6B7102A8040D300222FB5 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B70F2A8040D300222FB5 /* LibraryViewModel.swift */; };
 		14D6B7122A8040ED00222FB5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7112A8040ED00222FB5 /* SearchViewModel.swift */; };
 		14D6B7142A8046A900222FB5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7132A8046A900222FB5 /* SettingsViewModel.swift */; };
+		14D6B7162A8055B800222FB5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7152A8055B800222FB5 /* UIView.swift */; };
+		14D6B7192A805E7500222FB5 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 14D6B7182A805E7500222FB5 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,7 @@
 		14D6B70F2A8040D300222FB5 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		14D6B7112A8040ED00222FB5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		14D6B7132A8046A900222FB5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		14D6B7152A8055B800222FB5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D6B7192A805E7500222FB5 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +164,7 @@
 				14D6B6FD2A7FA1B000222FB5 /* UIImage.swift */,
 				14D6B6FF2A7FA3EE00222FB5 /* UIFont.swift */,
 				14D6B7012A7FE1A500222FB5 /* UIButton.swift */,
+				14D6B7152A8055B800222FB5 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +350,9 @@
 			dependencies = (
 			);
 			name = Spotify;
+			packageProductDependencies = (
+				14D6B7182A805E7500222FB5 /* SDWebImage */,
+			);
 			productName = Spotify;
 			productReference = 14D6B6902A7F918E00222FB5 /* Spotify.app */;
 			productType = "com.apple.product-type.application";
@@ -373,6 +381,10 @@
 				Base,
 			);
 			mainGroup = 14D6B6872A7F918E00222FB5;
+			packageReferences = (
+				14D6B7172A805E7500222FB5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				14D6B71A2A805EDC00222FB5 /* XCRemoteSwiftPackageReference "appirater" */,
+			);
 			productRefGroup = 14D6B6912A7F918E00222FB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +425,7 @@
 				14D6B7122A8040ED00222FB5 /* SearchViewModel.swift in Sources */,
 				14D6B6FE2A7FA1B000222FB5 /* UIImage.swift in Sources */,
 				14D6B6C32A7F93F200222FB5 /* PlaylistViewController.swift in Sources */,
+				14D6B7162A8055B800222FB5 /* UIView.swift in Sources */,
 				14D6B70C2A80404900222FB5 /* HomeViewModel.swift in Sources */,
 				14D6B6F02A7F980700222FB5 /* UserProfile.swift in Sources */,
 				14D6B6C62A7F940900222FB5 /* SearchResultsViewController.swift in Sources */,
@@ -656,6 +669,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14D6B7172A805E7500222FB5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		14D6B71A2A805EDC00222FB5 /* XCRemoteSwiftPackageReference "appirater" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arashpayan/appirater";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14D6B7182A805E7500222FB5 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14D6B7172A805E7500222FB5 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14D6B6882A7F918E00222FB5 /* Project object */;
 }
