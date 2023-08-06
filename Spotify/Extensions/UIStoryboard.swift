@@ -9,7 +9,7 @@ import UIKit
 
 extension UIStoryboard {
     static let LOGIN_VC = "LoginViewController"
-    static let REGISTER_VC = "RegisterViewController"
+    static let AUTH_VC = "AuthViewController"
     static let HOME_VC = "HomeViewController"
     static let SEARCH_VC = "SearchViewController"
     static let SETTINGS_VC = "SettingsViewController"
@@ -20,8 +20,8 @@ extension UIStoryboard {
         UIStoryboard(name: LOGIN_VC, bundle: nil)
     }
 
-    static var registerStoryboard: UIStoryboard {
-        UIStoryboard(name: REGISTER_VC, bundle: nil)
+    static var authStoryboard: UIStoryboard {
+        UIStoryboard(name: AUTH_VC, bundle: nil)
     }
 
     static var homeStoryboard: UIStoryboard {

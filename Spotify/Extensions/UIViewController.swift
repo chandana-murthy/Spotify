@@ -8,7 +8,20 @@
 import UIKit
 
 extension UIViewController {
+    func showErrorAlertWithDismiss(title: String = Strings.error, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: Strings.ok, style: .cancel)
+        alert.addAction(dismissAction)
+        self.present(alert, animated: true)
+    }
 
+    func showAlertWithActions(title: String, message: String, actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for action in actions {
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true)
+    }
 }
 
 
@@ -56,5 +69,14 @@ extension UIViewController {
         }
         let navController = UINavigationController(rootViewController: vc)
         return navController
+    }
+
+    static func authViewController(completion: ((Bool, Error?) -> Void)?) -> AuthViewController {
+        let storyboard = UIStoryboard.authStoryboard
+        guard let vc = storyboard.instantiateInitialViewController() as? AuthViewController else {
+            fatalError("Something went wrong here: \(#function)")
+        }
+        vc.completionHandler = completion
+        return vc
     }
 }

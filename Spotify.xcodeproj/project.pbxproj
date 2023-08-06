@@ -46,6 +46,9 @@
 		14D6B6FE2A7FA1B000222FB5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B6FD2A7FA1B000222FB5 /* UIImage.swift */; };
 		14D6B7002A7FA3EE00222FB5 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B6FF2A7FA3EE00222FB5 /* UIFont.swift */; };
 		14D6B7022A7FE1A500222FB5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7012A7FE1A500222FB5 /* UIButton.swift */; };
+		14D6B7042A7FFD7500222FB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7032A7FFD7500222FB5 /* Constants.swift */; };
+		14D6B7062A800CB600222FB5 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7052A800CB600222FB5 /* ErrorManager.swift */; };
+		14D6B7082A80128600222FB5 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B7072A80128600222FB5 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		14D6B6FD2A7FA1B000222FB5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		14D6B6FF2A7FA3EE00222FB5 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		14D6B7012A7FE1A500222FB5 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		14D6B7032A7FFD7500222FB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14D6B7052A800CB600222FB5 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		14D6B7072A80128600222FB5 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 				14D6B6952A7F918E00222FB5 /* SceneDelegate.swift */,
 				14D6B69C2A7F919000222FB5 /* Assets.xcassets */,
 				14D6B69E2A7F919000222FB5 /* LaunchScreen.storyboard */,
+				14D6B7032A7FFD7500222FB5 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -269,6 +276,7 @@
 				14D6B6E22A7F97C700222FB5 /* APICaller.swift */,
 				14D6B6E42A7F97CE00222FB5 /* HapticsManager.swift */,
 				14D6B6E62A7F97D500222FB5 /* AuthManager.swift */,
+				14D6B7052A800CB600222FB5 /* ErrorManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				14D6B6EB2A7F97F500222FB5 /* Playlist.swift */,
 				14D6B6ED2A7F97FC00222FB5 /* Artist.swift */,
 				14D6B6EF2A7F980700222FB5 /* UserProfile.swift */,
+				14D6B7072A80128600222FB5 /* AuthResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +402,8 @@
 				14D6B6F22A7F99AC00222FB5 /* UIColor.swift in Sources */,
 				14D6B6942A7F918E00222FB5 /* AppDelegate.swift in Sources */,
 				14D6B6E52A7F97CE00222FB5 /* HapticsManager.swift in Sources */,
+				14D6B7042A7FFD7500222FB5 /* Constants.swift in Sources */,
+				14D6B7062A800CB600222FB5 /* ErrorManager.swift in Sources */,
 				14D6B6E72A7F97D500222FB5 /* AuthManager.swift in Sources */,
 				14D6B6FA2A7F9DFE00222FB5 /* HomeViewController.swift in Sources */,
 				14D6B6EA2A7F97EE00222FB5 /* AudioTrack.swift in Sources */,
@@ -408,6 +419,7 @@
 				14D6B6E32A7F97C700222FB5 /* APICaller.swift in Sources */,
 				14D6B6EE2A7F97FC00222FB5 /* Artist.swift in Sources */,
 				14D6B6962A7F918E00222FB5 /* SceneDelegate.swift in Sources */,
+				14D6B7082A80128600222FB5 /* AuthResponse.swift in Sources */,
 				14D6B7022A7FE1A500222FB5 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

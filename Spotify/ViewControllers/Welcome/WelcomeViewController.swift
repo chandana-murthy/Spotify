@@ -8,41 +8,83 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var appleButton: UIButton!
-    lazy var allButtons = [signupButton, googleButton, facebookButton, appleButton]
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
         authorizeUser()
+        activityIndicator.isHidden = true
+        activityIndicator.hidesWhenStopped = true
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     private func authorizeUser() {
         if AuthManager.shared.isSignedIn {
-            let vc = TabBarViewController()
-            navigationController?.pushViewController(vc, animated: false)
+            let tabController = TabBarViewController()
+            tabController.modalPresentationStyle = .fullScreen
+            self.present(tabController, animated: false)
         }
     }
 
     private func setupButtons() {
-        for button in allButtons {
-            guard let button else {
-                return
-            }
-            button.layer.cornerRadius = 15
-            button.layer.borderColor = UIColor.gray.cgColor
-            button.layer.borderWidth = 1
-        }
+        loginButton.layer.cornerRadius = 15
+        loginButton.layer.borderColor = UIColor.gray.cgColor
+        loginButton.layer.borderWidth = 1
+    }
+
+    private func showLoading() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+
+    private func hideLoading() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
 }
 
 // MARK: - IBOutlets
 extension WelcomeViewController {
-    @IBAction func didTapNext() {
-        let viewController = TabBarViewController()
-        navigationController?.pushViewController(viewController, animated: true)
+    @IBAction func didTapLogin() {
+        showLoading()
+        let vc = UIViewController.authViewController { [weak self] success, error in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self?.hideLoading()
+                    self?.showErrorAlertWithDismiss(message: error?.localizedDescription ?? Strings.thereWasError)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self?.handleSignIn(success: success)
+            }
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func handleSignIn(success: Bool) {
+        guard success else {
+            self.showErrorAlertWithDismiss(message: Strings.errorWhileLoggingIn)
+            return
+        }
+        self.hideLoading()
+        let tabController = TabBarViewController()
+        tabController.modalPresentationStyle = .fullScreen
+        self.present(tabController, animated: true)
     }
 }
