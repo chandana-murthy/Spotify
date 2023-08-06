@@ -16,10 +16,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00m-kj-cl0">
-                                <rect key="frame" x="132.33333333333337" y="408.66666666666669" width="128.66666666666663" height="35"/>
+                                <rect key="frame" x="127.66666666666667" y="406.66666666666669" width="137.66666666666663" height="38.666666666666686"/>
                                 <color key="tintColor" red="0.11764705882352941" green="0.84313725490196079" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go to Spotify!"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to Spotify!">
+                                    <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapNext" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NmS-da-8mz"/>
                                 </connections>
