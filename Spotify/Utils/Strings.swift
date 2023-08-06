@@ -16,4 +16,5 @@ struct Strings {
     static let yourLibrary = NSLocalizedString("Your Library", comment: "")
     static let playlist = NSLocalizedString("Playlist", comment: "")
     static let artist = NSLocalizedString("Artist", comment: "")
+    static let browse = NSLocalizedString("Browse", comment: "")
 }

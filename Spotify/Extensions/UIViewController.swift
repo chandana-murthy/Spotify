@@ -14,13 +14,14 @@ extension UIViewController {
 
 // MARK: - Controllers
 extension UIViewController {
-    static func homeViewController() -> HomeViewController {
+    static func homeViewController() -> UINavigationController {
         let storyboard = UIStoryboard.homeStoryboard
-        guard let viewController = storyboard.instantiateInitialViewController() as? HomeViewController else {
+        guard let vc = storyboard.instantiateInitialViewController() as? HomeViewController else {
             print("Storyboard \(#function) not configured. Check for initialViewcontroller")
             fatalError("This should not be null")
         }
-        return viewController
+        let navController = UINavigationController(rootViewController: vc)
+        return navController
     }
 
     static func profileViewController() -> ProfileViewController {
@@ -39,19 +40,21 @@ extension UIViewController {
         return vc
     }
 
-    static func searchViewController() -> SearchViewController {
+    static func searchViewController() -> UINavigationController {
         let storyboard = UIStoryboard.searchStoryboard
         guard let vc = storyboard.instantiateInitialViewController() as? SearchViewController else {
             fatalError("Something went wrong here: \(#function)")
         }
-        return vc
+        let navController = UINavigationController(rootViewController: vc)
+        return navController
     }
 
-    static func libraryViewController() -> LibraryViewController {
+    static func libraryViewController() -> UINavigationController {
         let storyboard = UIStoryboard.libraryStoryboard
         guard let vc = storyboard.instantiateInitialViewController() as? LibraryViewController else {
             fatalError("Something went wrong here: \(#function)")
         }
-        return vc
+        let navController = UINavigationController(rootViewController: vc)
+        return navController
     }
 }

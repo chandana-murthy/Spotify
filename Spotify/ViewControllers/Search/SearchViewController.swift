@@ -8,10 +8,16 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavBar()
+    }
 
-        // Do any additional setup after loading the view.
+    private func configureNavBar() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = Strings.search
+        let colorKey = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = colorKey
+        navigationController?.navigationBar.largeTitleTextAttributes = colorKey
     }
 }

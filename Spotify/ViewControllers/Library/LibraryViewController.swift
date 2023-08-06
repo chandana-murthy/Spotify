@@ -11,8 +11,14 @@ class LibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureNavBar()
     }
 
+    private func configureNavBar() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = Strings.library
+        let colorKey = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = colorKey
+        navigationController?.navigationBar.largeTitleTextAttributes = colorKey
+    }
 }

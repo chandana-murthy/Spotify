@@ -11,8 +11,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = Strings.browse
+        let colorKey = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = colorKey
+        navigationController?.navigationBar.largeTitleTextAttributes = colorKey
     }
-
 }

@@ -20,6 +20,8 @@ class TabBarViewController: UITabBarController {
     private func setupTabs() {
         // Tab one
         let homeTab = UIViewController.homeViewController()
+        homeTab.navigationBar.tintColor = .white
+        homeTab.title = "Browse"
         homeTab.tabBarItem = UITabBarItem(title: Strings.home, image: UIImage.home, tag: 0)
 
         // Tab two
