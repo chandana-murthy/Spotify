@@ -13,4 +13,5 @@ extension UIImage {
     static let search = UIImage(systemName: "magnifyingglass")
     static let library = UIImage(named: "library")
     static let settings = UIImage(systemName: "gear")
+    static let person = UIImage(systemName: "person")
 }

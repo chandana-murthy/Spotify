@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController {
     var viewModel: ProfileViewModel!
@@ -59,7 +60,12 @@ class ProfileViewController: UIViewController {
                 self?.emailLabel.text = userProfile.email
                 self?.followCountLabel.text = String(followersTotal ?? 0)
                 self?.planLabel.text = userProfile.product
-//                self?.imageView.image = userProfile.images?.first?.url
+                self?.imageView.contentMode = .scaleAspectFit
+                guard let urlString = userProfile.images?.first?.url, let url = URL(string: urlString) else {
+                    self?.imageView.image = profilePic(with: userProfile.display_name, lastName: nil)
+                    return
+                }
+                self?.imageView.sd_setImage(with: url)
             }
         }
 
