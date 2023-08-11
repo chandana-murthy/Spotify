@@ -13,5 +13,5 @@ Spotify API access: https://developer.spotify.com/documentation/web-api
 ---
 External Libraries:
 
-SDWebImage package: https://github.com/SDWebImage/SDWebImage
-Alamofire - https://github.com/Alamofire/Alamofire
+- SDWebImage package: https://github.com/SDWebImage/SDWebImage
+- Alamofire - https://github.com/Alamofire/Alamofire
