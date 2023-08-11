@@ -19,7 +19,7 @@ struct Album: Codable {
     let uri: String?
     let genres: [String]?
     let label: String?
-    let popularity: Int
+    let popularity: Int?
     let artists: [Artist]
     let album_group: String?
 }

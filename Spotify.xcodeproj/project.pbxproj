@@ -11,6 +11,9 @@
 		1432B4F62A806680002925A0 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432B4F52A806680002925A0 /* UILabel.swift */; };
 		14C718382A869F67005A4AAC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C718372A869F67005A4AAC /* Album.swift */; };
 		14C7183A2A869F76005A4AAC /* NewReleases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C718392A869F76005A4AAC /* NewReleases.swift */; };
+		14C7183C2A86A470005A4AAC /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7183B2A86A470005A4AAC /* Owner.swift */; };
+		14C7183E2A86BA2D005A4AAC /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7183D2A86BA2D005A4AAC /* Recommendations.swift */; };
+		14C718402A86BB2D005A4AAC /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7183F2A86BB2D005A4AAC /* Genres.swift */; };
 		14D6B6942A7F918E00222FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B6932A7F918E00222FB5 /* AppDelegate.swift */; };
 		14D6B6962A7F918E00222FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6B6952A7F918E00222FB5 /* SceneDelegate.swift */; };
 		14D6B69D2A7F919000222FB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D6B69C2A7F919000222FB5 /* Assets.xcassets */; };
@@ -68,6 +71,9 @@
 		1432B4F52A806680002925A0 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		14C718372A869F67005A4AAC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		14C718392A869F76005A4AAC /* NewReleases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleases.swift; sourceTree = "<group>"; };
+		14C7183B2A86A470005A4AAC /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		14C7183D2A86BA2D005A4AAC /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
+		14C7183F2A86BB2D005A4AAC /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		14D6B6902A7F918E00222FB5 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D6B6932A7F918E00222FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D6B6952A7F918E00222FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -327,6 +333,9 @@
 				14D6B7072A80128600222FB5 /* AuthResponse.swift */,
 				14C718372A869F67005A4AAC /* Album.swift */,
 				14C718392A869F76005A4AAC /* NewReleases.swift */,
+				14C7183B2A86A470005A4AAC /* Owner.swift */,
+				14C7183D2A86BA2D005A4AAC /* Recommendations.swift */,
+				14C7183F2A86BB2D005A4AAC /* Genres.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,11 +516,13 @@
 				14D6B6F22A7F99AC00222FB5 /* UIColor.swift in Sources */,
 				14D6B6942A7F918E00222FB5 /* AppDelegate.swift in Sources */,
 				14D6B6E52A7F97CE00222FB5 /* HapticsManager.swift in Sources */,
+				14C718402A86BB2D005A4AAC /* Genres.swift in Sources */,
 				14D6B7042A7FFD7500222FB5 /* Constants.swift in Sources */,
 				14D6B70A2A80227E00222FB5 /* ProfileViewModel.swift in Sources */,
 				14D6B7062A800CB600222FB5 /* ErrorManager.swift in Sources */,
 				1432B4F42A806619002925A0 /* Utils.swift in Sources */,
 				14D6B6E72A7F97D500222FB5 /* AuthManager.swift in Sources */,
+				14C7183E2A86BA2D005A4AAC /* Recommendations.swift in Sources */,
 				14D6B7102A8040D300222FB5 /* LibraryViewModel.swift in Sources */,
 				14D6B6FA2A7F9DFE00222FB5 /* HomeViewController.swift in Sources */,
 				14D6B6EA2A7F97EE00222FB5 /* AudioTrack.swift in Sources */,
@@ -529,6 +540,7 @@
 				14C7183A2A869F76005A4AAC /* NewReleases.swift in Sources */,
 				14D6B6962A7F918E00222FB5 /* SceneDelegate.swift in Sources */,
 				14D6B7082A80128600222FB5 /* AuthResponse.swift in Sources */,
+				14C7183C2A86A470005A4AAC /* Owner.swift in Sources */,
 				14D6B70E2A8040A000222FB5 /* TabBarViewModel.swift in Sources */,
 				14D6B7022A7FE1A500222FB5 /* UIButton.swift in Sources */,
 				14D6B7142A8046A900222FB5 /* SettingsViewModel.swift in Sources */,

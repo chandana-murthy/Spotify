@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        viewModel.fetchRecommendedGenres()
     }
 
     private func setupNavBar() {
@@ -27,5 +28,23 @@ class HomeViewController: UIViewController {
         let viewModel = viewModel.getSettingsViewModel()
         let viewController = UIViewController.settingsController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func bind() {
+        viewModel.didFetchNewReleasesFail = { [weak self] error in
+
+        }
+
+        viewModel.didFetchNewReleasesSucceed = { [weak self] newReleases in
+            print(newReleases)
+        }
+
+        viewModel.didFetchPlaylistsSucceed = { playlists in
+
+        }
+
+        viewModel.didFetchPlaylistsFail = { error in
+
+        }
     }
 }
