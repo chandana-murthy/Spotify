@@ -6,46 +6,46 @@
 //
 
 import Foundation
+import Alamofire
 
 final class APICaller {
     static let shared = APICaller()
 
     private init() { }
 
-    enum HTTPMethod: String {
-        case GET
-        case POST
-    }
-
-
-    private func createRequest(with url: URL?, type: HTTPMethod, completion: @escaping ((URLRequest) -> Void)) {
+    private func getHeader(completion: @escaping ((HTTPHeaders) -> Void)) {
         AuthManager.shared.withValidToken { token in
-            guard let url = url else {
-                return
-            }
-            var request = URLRequest(url: url)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            request.httpMethod = type.rawValue
-            request.timeoutInterval = 30
-            completion(request)
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer \(token)"
+            ]
+            completion(headers)
         }
     }
 
-    func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
-        createRequest(with: URL(string: Constants.baseAPIUrl + "/me"), type: .GET) { baseRequest in
-            let task = URLSession.shared.dataTask(with: baseRequest) { data, _, error in
-                guard let data, error == nil else {
-                    completion(.failure(SError.failedToGetData))
-                    return
-                }
-                do {
-                    let result = try JSONDecoder().decode(UserProfile.self, from: data)
-                    completion(.success(result))
-                } catch {
-                    completion(.failure(error))
-                }
+    func getCurrentUserProfile(completion: @escaping (Result<UserProfile, AFError>) -> Void) {
+        getHeader { headers in
+            AF.request(Constants.baseAPIUrl + "/me",
+                       method: .get,
+                       parameters: nil,
+                       encoding: JSONEncoding.default,
+                       headers: headers)
+            .responseDecodable(of: UserProfile.self) { response in
+                completion(response.result)
             }
-            task.resume()
+        }
+    }
+
+    func getNewReleases(completion: @escaping (Result<NewReleases, AFError>) -> Void) {
+        let url = Constants.baseAPIUrl + "/browse/new-releases"
+        getHeader { headers in
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: JSONEncoding.default,
+                       headers: headers)
+            .responseDecodable(of: NewReleases.self) { response in
+                completion(response.result)
+            }
         }
     }
 }

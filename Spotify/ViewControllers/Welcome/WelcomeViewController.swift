@@ -35,6 +35,7 @@ class WelcomeViewController: UIViewController {
 
     private func authorizeUser() {
         if AuthManager.shared.isSignedIn {
+            AuthManager.shared.refreshTheToken(completion: nil)
             let tabController = TabBarViewController()
             tabController.modalPresentationStyle = .fullScreen
             self.present(tabController, animated: false)

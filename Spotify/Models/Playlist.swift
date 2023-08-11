@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Playlist {
+struct Playlist: Codable {
 
 }

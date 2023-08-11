@@ -7,5 +7,6 @@ target 'Spotify' do
 
   # Pods for Spotify
   pod 'SDWebImage'
+  pod 'Alamofire'
 
 end

@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserProfile: Codable {
-    let country: String // The country of the user
+    var country: String? = "Germany" // The country of the user
     let display_name: String
     let email: String
     let explicitContent: [String: Int]?

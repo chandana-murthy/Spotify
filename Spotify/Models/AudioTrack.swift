@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct AudioTrack {
+struct AudioTrack: Codable {
 
 }
