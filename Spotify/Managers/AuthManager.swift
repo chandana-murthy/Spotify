@@ -1,9 +1,8 @@
 //
 //  AuthManager.swift
 //  Spotify
-//  This is specifically for the account alertgrafana1234@gmail.com
-//  To get the pwd, please contact developer.
-//  Or rewrite the client ID and secret for your spotify account
+//
+//  rewrite the client ID and secret for your spotify account
 //
 //  Created by Chandana Murthy on 06.08.23.
 //
@@ -15,8 +14,8 @@ final class AuthManager {
     private var isRefreshingToken = false
 
     struct AuthConstants {
-        static let clientID = "90d1438151c8486f8623e395b94834e0"
-        static let clientSecret = "8ce1730b4c0442469fd4f56a3836f845"
+        static let clientID = ""
+        static let clientSecret = ""
         static let tokenAPIUrl = "https://accounts.spotify.com/api/token"
         static let redirectUrl = "http://localhost:8888/callback"
         static let scopes = "user-read-private%20playlist-modify-private%20playlist-modify-public%20playlist-read-private%20user-follow-read%20user-library-modify%20user-library-read%20user-top-read%20user-read-email"
